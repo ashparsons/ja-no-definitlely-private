@@ -1,0 +1,347 @@
+/**
+ * Body CSS
+ */
+
+ html,
+ body {
+   height: 100%;
+   background-color: #eee;
+ }
+ 
+ html,
+ body,
+ input,
+ textarea,
+ buttons {
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+ }
+
+ li a {
+   color: black;
+ }
+ 
+ 
+ /**
+  * Layout CSS
+  */
+ 
+ #header {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   z-index: 2;
+   transition: left 0.2s;
+   background-color: white;
+   color: black;
+ }
+
+ #burger-menu{
+   color: black;
+ }
+
+ .mui-appbar{
+   color: black;
+   background-color: white;
+ }
+ 
+ #sidedrawer {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   width: 200px;
+   left: -200px;
+   overflow: auto;
+   z-index: 3;
+   background-color: #fff;
+   transition: transform 0.2s;
+   box-shadow: 1px 1px 10px 1px #B8B8B8;
+ }
+ 
+ #content-wrapper {
+   min-height: 100%;
+   overflow-x: hidden;
+   margin-left: 0px;
+   transition: margin-left 0.2s;
+   background-color: white;
+   /* sticky bottom */
+   box-sizing: border-box;
+   margin-bottom: -160px;
+   padding-bottom: 160px;
+ }
+ 
+ #footer {
+   box-sizing: border-box;
+   height: 160px;
+   margin-left: 0px;
+   transition: margin-left 0.2s;
+   background-color: white;
+ }
+
+ body.hide-sidedrawer #header-color{
+  background-color: #D56849;
+ }
+
+ body.hide-sidedrawer #sidedrawer {
+  box-shadow: 0px 0px 0px 0px;
+}
+
+ @media (min-width: 768px) {
+
+  body.hide-sidedrawer #name{
+    color: white;
+  }
+
+  body.hide-sidedrawer #burger-menu{
+    color: white;
+  }
+
+   #header {
+     left: 200px;
+     background-color: white;
+   }
+   
+   #sidedrawer {
+     /* color: white; */
+     transform: translate(200px);
+   }
+   
+   #content-wrapper {
+     margin-left: 200px;
+   }
+   
+   #footer {
+     margin-left: 200px;
+   }
+
+   
+   
+   body.hide-sidedrawer #header {
+     left: 0;
+    
+   }
+   
+   body.hide-sidedrawer #sidedrawer {
+     transform: translate(0px);
+     box-shadow: 0px 0px 0px 0px;
+   }
+   
+   body.hide-sidedrawer #content-wrapper {
+     margin-left: 0;
+   }
+   
+   body.hide-sidedrawer #footer {
+     margin-left: 0;
+   }
+ }
+ 
+ 
+ /**
+  * Toggle Sidedrawer
+  */
+ #sidedrawer.active {
+   transform: translate(200px);
+ }
+ 
+ 
+ /**
+  * Header CSS
+  */
+ 
+ .sidedrawer-toggle {
+   color:white;
+   cursor: pointer;
+   font-size: 20px;
+   line-height: 20px;
+   margin-right: 10px;
+ }
+ 
+ .sidedrawer-toggle:hover {
+   color:black;
+   text-decoration: none;
+ }
+
+ #name{
+  color: black;
+  width: 100%;
+  margin-left: 30%;
+}
+
+ 
+ /**
+  * Sidedrawer CSS
+  */
+ 
+ #sidedrawer-brand {
+  background-color: #D56849;
+  margin-top: -40px;
+  height: 200px;
+ }
+ 
+ #sidedrawer ul {
+   list-style: none;
+ }
+ 
+ #sidedrawer > ul {
+   padding-left: 0px;
+ }
+ 
+ #sidedrawer > ul > li:first-child {
+   padding-top: 15px;
+ }
+ 
+ #sidedrawer strong {
+   display: block;
+   padding: 15px 22px;
+   cursor: pointer;
+ }
+ 
+ #sidedrawer strong:hover {
+   background-color: #E0E0E0;
+ }
+ 
+ #sidedrawer strong + ul > li {
+   padding: 6px 0px;
+ }
+ 
+ 
+ /**
+  * Footer CSS
+  */
+ 
+ #footer {
+  background-color: white;
+   color: rgba(0,0,0,0.5);
+   height: 100px;
+   bottom: 0;
+   overflow: auto;
+   z-index: 2;
+ }
+ 
+ #footer a {
+   color: #fff;
+   text-decoration: underline;
+
+ }
+ 
+ /**
+  * Content CSS
+  */
+
+
+
+  @media (min-width: 768px) {
+    
+
+  #profile-header-image{
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    margin-left: 65px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    border-color: gray;
+    border-style: solid;
+  }
+
+#profile-header-name{
+  text-align: right;
+  margin: 0;
+  margin-right: 10px;
+}
+
+#profile-header-surname{
+  text-align: right;
+  margin: 0;
+  margin-right: 10px;
+}
+
+#logout-button{
+  margin-left: 50px;
+  background-color: #D56849;
+  position: fixed;
+  bottom: 2%;
+}
+
+#body-content{
+  padding: 0;
+  margin: 0;
+  width: 80%;
+  margin-left: 2%;
+}
+
+.profile-img{
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  #body-content {
+  padding: 0;
+  margin: 0;
+  width: 80%;
+  margin-left: 2%;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  #sidedrawer {
+    box-shadow: 0px 0px 0px 0px;
+  }
+  #header-color{
+    background-color: #D56849;
+   }
+   body.mui-scroll-lock #header-color{
+    background-color: white;
+    box-shadow: 1px 1px 10px 1px #B8B8B8;
+   }
+
+   body.mui-scroll-lock #sidedrawer{
+    box-shadow: 1px 1px 10px 1px #B8B8B8;
+   }
+
+  #login-con{
+    margin-left: 13%;
+    margin-top: 22%;
+  }
+
+  #name{
+    color: white;
+  }
+
+  #burger-menu{
+    color: white;
+  }
+
+  .mui-appbar{
+    color: white;
+    background-color: #D56849;
+  }
+}
+
+#content{
+  padding: 0;
+  margin: 0;
+}
+
+#profile-header-username {
+  font-size: 17px;
+  float:right;
+  padding-right: 10px;
+  
+}
+
+#profile-header-name {
+  font-weight: 900;
+}
+
+#profile-header-surname {
+  font-weight: 900;
+}

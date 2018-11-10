@@ -1,0 +1,485 @@
+/* LOGIN PAGE */
+
+#login-con{
+  background-color: white;
+  border-radius: 1px;
+  width: 380px;
+  height: 300px;
+  margin-left: 36%;
+  margin-top: 15%;
+  float: left;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#reg-con{
+  background-color: white;
+  border-radius: 1px;
+  width: 380px;
+  height: 410px;
+  margin-left: 36%;
+  margin-top: 13%;
+  float: left;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#upPro-con{
+  background-color: white;
+  border-radius: 1px;
+  width: 380px;
+  height: 410px;
+  margin-left: 36%;
+  margin-top: 5%;
+  float: left;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.side-bar {
+  width: 15%;
+  height: 100vh;
+  background-color: #4F4042;
+  float: right;
+}
+
+.login-background {
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  height: auto;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  float: left;
+}
+
+.heading {
+  text-align: center;
+}
+
+.login-con button{
+  margin-left: 30%;
+}
+
+#login-con input {
+  display: block;
+  margin-left: 8%;
+  width: 290px;
+  margin-top: 30px;
+}
+
+#reg-con input {
+  display: block;
+  margin-left: 8%;
+  width: 290px;
+  margin-top: 15px;
+}
+
+#upPro-con input {
+  display: block;
+  margin-left: 8%;
+  width: 290px;
+  margin-top: 5px;
+}
+
+.profile-text {
+  display: block;
+  width: 290px;
+  margin-top: 5px;
+}
+
+#login_submit {
+  display: block;
+  margin-left: 8%;
+  width: 295px;
+  margin-top: 20px;
+  height: 30px;
+  background-color: #D56849;
+  cursor: pointer;
+  color: white;
+}
+
+#register_submit {
+  display: block;
+  margin-left: 8%;
+  width: 295px;
+  margin-top: 5px;
+  height: 30px;
+  background-color: #D56849;
+  cursor: pointer;
+  color: white;
+}
+
+#login_register {
+  display: block;
+  margin-left: 26%;
+  width: 230px;
+  margin-top: 30px;
+  height: 30px;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#register_loginFB {
+  background-color: #3b5998;
+  color: white;
+  margin-left: 8%;
+  width: 295px;
+  margin-top: 20px;
+  height: 30px;
+  cursor: pointer;
+}
+/* ALL PAGES */
+
+.errors{
+  color: red;
+  padding: 0;
+  margin: 0;
+  margin-left: 8%;
+  height: 10px;
+}
+
+#profile-image{
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  border-color: gray;
+  border-style: solid;
+  float: left;
+  margin-right: 10px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+.text-right{
+  text-align: right;
+}
+
+
+/* HOME PAGE */
+
+.ask-bt{
+  margin-bottom: 20px;
+}
+
+.btn-delete{
+  width: 60px;
+  margin: 0;
+  font-size: 10px;
+}
+
+#company_name {
+  color: white;
+  margin-left: 10%;
+  padding-top: 5%;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+}
+ 
+@media (max-width: 576px) {
+  .login-background {
+    background-image: url("../images/background_mobile.png");
+  }
+  
+  #login-con{
+    margin-left: 13%;
+    margin-top: 22%;
+    width: 300px;
+    height: 320px;
+  }
+
+  #reg-con{
+    margin-left: 13%;
+    margin-top: 22%;
+    width: 300px;
+    height: 390px;
+  }
+  
+  #upPro-con{
+    margin-left: 13%;
+    margin-top: 0%;
+    width: 300px;
+    height: 390px;
+  }
+
+  .login-background {
+    background-size: 100% 100%;
+  }
+
+  #login-con input {
+    display: block;
+    margin-left: 8%;
+    width: 210px;
+    margin-top: 30px;
+  }
+  
+  #login_submit {
+    display: block;
+    margin-left: 8%;
+    width: 215px;
+    margin-top: 20px;
+    height: 30px;
+    background-color: #D56849;
+    cursor: pointer;
+    color: white;
+  }
+
+  #reg-con input {
+    display: block;
+    margin-left: 8%;
+    width: 210px;
+    margin-top: 10px;
+  }
+  
+  #register_submit {
+    display: block;
+    margin-left: 8%;
+    width: 215px;
+    margin-top: 5px;
+    height: 30px;
+    background-color: #D56849;
+    cursor: pointer;
+    color: white;
+  }
+
+  #register_loginFB {
+    background-color: #3b5998;
+    color: white;
+    margin-left: 8%;
+    width: 215px;
+    margin-top: 20px;
+    height: 30px;
+  }
+
+  #login_register a{
+    margin-left: 8%;
+    margin-top: 50px;
+  }
+}
+
+.author-comment{
+  text-decoration: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+#category-drop{
+  width: 30%;
+}
+
+.question-author{
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.right{
+  float: right;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.vote{
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.delete-btn{
+  background: none;
+	color: black;
+  border: none;
+  margin: 0;
+	padding: 0;
+	
+}
+
+/* .answer-btn{
+} */
+
+.vote-con{
+  margin: 0;
+	padding: 0;
+  height: 80%;
+  width: 10%;
+  float: right;
+  display: inline-grid;
+}
+
+.answer-vote-con{
+  width: 100%;
+  height: auto;
+  display: inline-flex;
+}
+
+.answer-con{
+  width: 90%;
+}
+
+/* .answerForm {
+  display: none;
+} */
+
+/* CATEGORY PAGE */
+
+#category_title{
+  color: black;
+  width: 100%;
+  margin-left: 41%;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.collapsible-header {
+  display: flex;
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.collapsible-header i {
+  padding-right: 1rem;
+}
+
+.collapsible-body {
+  box-sizing: border-box;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.15s ease-out;
+}
+
+.collapsible-body > p {
+  padding: 2rem;
+  margin: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+/* PROFILE PAGE */
+
+#profile-pic-user{
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border-color: gray;
+  border-style: solid;
+  float: left;
+  margin-right: 50px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+#edit-con{
+  margin-top: 10%;
+  width: 400px;
+  height: 390px;
+}
+
+.p{
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+
+/* COMMENT PAGE */
+
+.commentsmade{
+  min-height: 80px;
+}
+
+#search {
+  float: right;
+  height: 20px;
+  width: 230px;
+  margin-right: -9%;
+}
+
+.question-text {
+  margin-left: 9%;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.answer-text {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#question_submit {
+  background-color: #d54950;
+  color: white;
+  float: right;
+}
+
+#answer_submit {
+  background-color: #d54950;
+  color: white;
+  float: right;
+}
+
+#comment_submit {
+  background-color: #d54950;
+  color: white;
+  float: right;
+}
+
+#profile_submit {
+  background-color: #d54950;
+  color: white;
+  float: right;
+}
+
+#comment_input {
+  width: 400px;
+}
+
+.question-author {
+  color: black;
+}
+
+.fa-arrow-up {
+  color: #d54950;
+}
+
+.fa-arrow-down {
+  color: #d54950;
+}
+
+.ajaxDeleteQ {
+  color: black;
+  margin-left: 10%;
+}
+
+.ajaxDeleteA {
+  color: black;
+}
+
+.author-comment {
+  color: black;
+}
+
+.upvote-value {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+
+#category-text {
+  color: #d58a49;
+}
+
+.updateProfileForm {
+  margin-left: 40%;
+}
