@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="UTF-8">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
+        <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="{{ ('/js/main.js') }}"></script>
+        <link rel="icon" href="{{ ('/images/favicon.ico') }}" type="image/x-icon"/>
+        <link rel="stylesheet" href="{{ ('/css/main.css') }}">
+        <link rel="stylesheet" href="{{ ('/css/header.css') }}">
+
+        
+        
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+                
+        {% endblock %}
+    </head>
+    <body>
+
+    <div id="sidedrawer" class="mui--no-user-select">
+      <div id="sidedrawer-brand" class="mui--appbar-line-height">
+       <div id="profile-header-image"><img style="border-radius:50%" class="profile-img" src="{{ ('/images/') }}{{ useraccount.image_path }}">
+       </div>
+       <h3 id="profile-header-name">{{ app.session.get('loggedInUser').name }}</h3>
+       <h3 id="profile-header-surname">{{ app.session.get('loggedInUser').surname }}</h3>
+       <h3 id="profile-header-username">{{ app.session.get('loggedInUser').username }}</h3>
+
+      </div>
+
+      <div class="mui-divider"></div>
+      <ul>
+        <li>
+          <strong><a href="/home">Home</a></strong>
+        </li>
+        <li>
+          <strong>Categories</strong>
+          <ul>
+            {% for category in categories %}
+              <li><a href="/category/{{ category.id }}">{{ category.category_name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li>
+          <strong><a href="/comment">Message Board</a></strong>
+        </li>
+        <li>
+          <strong><a href="/profile/{{ app.session.get('loggedInUser').id }}">View Profile</a></strong>
+        </li>
+      </ul>
+      <a class="mui-btn mui-btn--small mui-btn--primary" href="/logout" id="logout-button"><i class="fa fa-power-off"></i> Log out</a>
+    </div>
+
+    <header id="header">
+      <div class="mui-appbar mui--appbar-line-height">
+        <div id="header-color" class="mui-container-fluid">
+          <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+          <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer" id="burger-menu">☰</a>
+          <span class="mui--text-title"><a href="/home" id="name">Ja No Definitely</a></span>
+        </div>
+      </div>
+      <div class="mui-divider"></div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="mui--appbar-height"></div>
+      <div class="mui-container-fluid">
+        <main class="container" id="body-content">
+             {% block body %}{% endblock %}
+        </main>
+        </div>
+    </div>
+    {# <div id="ad" class="mui-container-fluid">
+            <div class="mui-row">
+            <img id="ad-image" src="https://dsp-media.eskimi.com/banner/7074_18b9e2a8e738b930e3882ec92ea90bdc.gif?_e=o2eTr6DXqGFu-BcxccbUnP62LuWw8XUNFyadwQ6_gRLKovRR770_vE9INXgjeTkn9cArG5004bGM45-o1F9LdLhSqh_q6yU8t01ID0FnPoXbjuRahM8RZ_NoiBU4fzY06FJex0eTMX-Cmm5Uai8iGLpDL6uNkbxQMjyzLnaRch4woZHNUSIMjwfWDqTFQH8ZK-Iww33hYjmpTzvTGwperoajnxciIQtKwGvyK7jQ-GQ" width="250" height="100%" onload="tlt()">
+
+            </div>
+    </div> #}
+    <footer id="footer">
+      <div class="mui-divider"></div>
+      <div class="mui-container-fluid">
+        <br>
+        Made with ♥ by Git Goin
+      </div>
+    </footer>
+        
+
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+    
+</html>

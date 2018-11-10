@@ -1,0 +1,115 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ja no definitely - Profile {% endblock %}
+
+{% block body %}
+<div>
+
+     <!--Profile-->
+    <div class="mui-container-fluid middle-con">
+      <div class="mui-row">
+        
+
+         <ul class="mui-tabs__bar mui-tabs__bar--justified">
+          <li class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="pane-justified-1">About</a></li>
+          <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-2">Posts</a></li>
+          {% if app.session.get('loggedInUser').id == useraccount.id %}
+            <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-3">Settings</a></li>
+          {% endif %}
+        </ul>
+        <div class="mui-tabs__pane mui--is-active" id="pane-justified-1">
+        <br>
+        <br>
+
+        <div class="mui-panel mui-col-sm-12">
+            <br>
+            <br>
+            <div id="profile-pic-user" class="mui-col-sm-3"><img style="border-radius:50%" class="profile-img" src="{{ ('/images/') }}{{ useraccount.image_path }}"></div>
+            <div id="profile-about-info" class="mui-col-sm-9">
+              <div id="username" class="mui--text-headline"> {{ useraccount.username }}</div>
+              <br>
+              <div class="mui--text-black-54">Full Name : {{ useraccount.name }} {{useraccount.surname}}</div>
+              <br>
+              <div class="mui--text-black-54">User Type : {{ useraccount.type }} </div>
+              {% if app.session.get('loggedInUser').type == "admin" %}
+                {% if useraccount.type == "user" %}
+                  {{ form_start(banForm, {'attr': {'novalidate': 'novalidate'}}) }}
+                  {{ form_widget(banForm) }}
+                  {{ form_end(banForm) }}
+                {% endif %}
+              {% endif %}
+            <br>
+            <br>
+            </div>
+          </div> 
+        </div>
+
+        <div class="mui-tabs__pane" id="pane-justified-2">
+          <br>
+          <br>
+
+          <div class="mui-panel mui-col-sm-12">
+              <br>
+              <br>
+              <div id="asked" class="mui--text-headline">Questions Asked</div>
+              <br>
+              {% for question in questions %}
+              {% if question.author.id == useraccount.id %}
+              <div class="mui--text-black-54 mui--text-body2">{{ question.category.categoryName }} - {{ question.question_text }}</div>
+              <br>
+              {% endif %}
+              {% endfor %}
+              <br>
+          </div>
+
+          <div class="mui-panel mui-col-sm-12">
+              <br>
+              <br>
+              <div id="answered" class="mui--text-headline">Answers Shared</div>
+              <br>
+              {% for answer in answers %}
+              {% if answer.author.id == useraccount.id %}
+              <div class="mui--text-black-54">Q : {{ answer.question.question_text }}</div>
+              <div class="mui--text-black-54">A : {{ answer.answer_text }}</div>
+              <br>
+              {% endif %}
+              {% endfor %}
+              <br>
+          </div>
+        </div>
+
+        
+        {% if app.session.get('loggedInUser').id == useraccount.id %}
+        <div class="mui-tabs__pane" id="pane-justified-3">
+           <div class="mui-panel mui-col-sm-12">
+          <div class="updateProfileForm">
+            {{ form_start(profileForm, {'attr': {'novalidate': 'novalidate'}}) }}
+            <p class="profile-text">Name</p>
+            {{ form_widget(profileForm.name, {'attr': {'placeholder':  useraccount.name  } }) }}
+            <h5 class="errors"> {{ name }} </h5>
+            <p class="profile-text">Surname</p>
+            {{ form_widget(profileForm.surname, {'attr': {'placeholder': useraccount.surname} }) }}
+            <h5 class="errors"> {{ surname }} </h5>
+            <p class="profile-text">Username</p>
+            {{ form_widget(profileForm.username, {'attr': {'placeholder': useraccount.username} }) }}
+            <h5 class="errors"> {{ usernameT }} </h5>
+            <p class="profile-text">Email</p>
+            {{ form_widget(profileForm.email, {'attr': {'placeholder': useraccount.email} }) }}
+            <h5 class="errors"> {{ emailT }} </h5>
+            <p class="profile-text">Password</p>
+            {{ form_widget(profileForm.password, {'attr': {'placeholder': 'Password'} }) }}
+            <h5 class="errors"> {{ errors }} </h5>
+            {{ form_end(profileForm) }}
+
+            {# {{ form_start(imageForm) }}
+            <p class="profile-text">Upload image</p>
+            {{ form_widget(imageForm.name) }}
+            {{ form_widget(imageForm.file) }}
+            {{ form_end(imageForm) }} #}
+          
+        </div>
+        </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %} 
